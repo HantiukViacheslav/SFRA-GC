@@ -1,0 +1,6 @@
+
+<label for="giftCert">${Resource.msg('field.gift.cert.input','giftCert',null)}</label>
+<div class="row">
+    <input type="text" class="form-control col-9" id="giftCert" value="">
+    <button class="col-3 text-center btn btn-primary submit-giftCert"  data-action="${URLUtils.https('CheckoutServices-ApplayGiftCertificat')}"type="button">${Resource.msg('action.apply.giftCert', 'giftCert', null)}</button>
+</div>
