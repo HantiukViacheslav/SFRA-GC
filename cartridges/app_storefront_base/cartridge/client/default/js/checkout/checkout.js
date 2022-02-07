@@ -615,6 +615,23 @@ var exports = {
         $('body').on('checkout:enableButton', function (e, button) {
             $(button).prop('disabled', false);
         });
+    },
+    addGiftCert: function () {
+        $('body').on('click','.submit-giftCert', function (e) {
+            $.ajax({
+                url: $(this).data('action'),
+                method: 'get',
+                data: 'giftcertID=' + $('#giftCert').val(),
+                success: function (data) {
+                    if (data.error) {
+                        //TODO:show error
+                    } else {
+                        $('.submit-giftCert').after(`<div class="col-12"><span>GC Code: ${data.gcCode}</span><span>GC Balance: ${data.gcBalance}</span><span>Total : ${data.total}</span></div>`);
+                        
+                    }
+                }
+            });
+        });
     }
 
 
