@@ -43,7 +43,7 @@ function calculatePaymentTransaction(currentBasket, single) {
                         orderValue = 0;
                     }
 
-                    orderTotal = new Money(orderValue, 'USD');
+                    orderTotal = new Money(orderValue, currentBasket.getCurrencyCode());
                 } else {
                     paymentInstrument.paymentTransaction.setAmount(orderTotal);
                 }
